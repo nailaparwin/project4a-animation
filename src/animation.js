@@ -1,9 +1,9 @@
-import React, { useEffect, useState, useRef } from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import useWebAnimations, { rotateOut } from "@wellyshen/use-web-animations";
+//import useWebAnimations, { rotateOut } from "@wellyshen/use-web-animations";
+import useWebAnimations from "@wellyshen/use-web-animations";
 import lion from './images/oie.gif';
-import cloud from './images/cloud.png';
+//import cloud from './images/cloud.png';
 import bird from './images/bird.gif';
 import bird2 from './images/bird2.gif';
 import jungle from './images/jngle.png';
@@ -28,7 +28,7 @@ function Animation() {
   });
 
 
-  const { ref:o2} = useWebAnimations({
+  /* const { ref:o2} = useWebAnimations({
     keyframes:[
       {transform: "translate(300px, -240px)", opacity:1},
       {transform: "translate(100px, -240px)", opacity:1},
@@ -43,7 +43,7 @@ function Animation() {
       easing: "ease-in-out"
       //easing: "steps(4,end)"
     },
-  });
+  }); */
 
   const { ref:o3} = useWebAnimations({
     keyframes:[
@@ -61,7 +61,7 @@ function Animation() {
     },
   });
 
-  const { ref:o4, playState, getAnimation} = useWebAnimations({
+  const { ref:o4} = useWebAnimations({
     keyframes:[
       {transform: "translate(0px, -400px)",opacity:100},
       {transform: "translate(0px, 40px)",opacity:100},
@@ -165,28 +165,28 @@ function Animation() {
       
       <div ref={main}  style={{height:'500px'}}>
             
-      <img src={bird} width="100px" ref={o3}/>      
+      <img src={bird} width="100px" alt="bird" ref={o3}/>      
       
-      <div ref={o5} className="round">      
-      </div>  
+      <div ref={o5} className="round" />      
+       
      
       <div  >
-      <img src={lion} width= "300px" ref={o1} />
+      <img src={lion} width= "300px" alt="lion" ref={o1} />
       </div>
      {/*  <div ref={o2} >
       <img src={cloud} width= "130px" />
       </div>*/}
       <div ref={o4} >
-      <img src={bird2} width="100px" />
+      <img src={bird2} alt="bird2" width="100px" />
       </div>
       <div ref={o6} style={{position: 'absolute', top: 150, left: 200}} >
-      <img src={star} width="40px" />
+      <img src={star} alt="star" width="40px" />
       </div>
       <div ref={o7} style={{position: 'absolute', top: 200, left: 250}} >
-      <img src={star} width="40px" />
+      <img src={star} alt="star" width="40px" />
       </div>
       <div ref={o8} style={{position: 'absolute', top: 150, left: 400}} >
-      <img src={star} width="40px" />
+      <img src={star} alt="star" width="40px" />
       </div> 
       </div>
       </div>
